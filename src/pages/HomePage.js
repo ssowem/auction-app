@@ -1,9 +1,20 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
+import { useState } from "react";
 import { FaMessage } from "react-icons/fa6";
 import { IoMdRefresh } from "react-icons/io";
+// import { MdArrowBackIos } from "react-icons/md";
+// import { MdArrowForwardIos } from "react-icons/md";
 import { MdFavoriteBorder } from "react-icons/md";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+import { BsPlusCircleFill } from "react-icons/bs";
 
 export default function HomePage() {
+
+    const [showDetail, setShowDetail] = useState(false);
+
+    const handleToggleDetail = () => {
+        setShowDetail(true);
+    }
+
     return (
         <div className="home">
             <div className="home__header">
@@ -18,8 +29,9 @@ export default function HomePage() {
                 </div>
 
                 <div className="home__toolbar">
-                    <div className="home__title">
-                        거래목록
+                    <div className="home__menu">
+                        <a href="/">거래목록</a>
+                        <a href="/">메세지함</a>
                     </div>
                     <div className="home__search">
                         <input type="search" placeholder="검색어를 입력해주세요." />
@@ -129,7 +141,7 @@ export default function HomePage() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="item__icon">
+                                <div className="item__image">
                                     <div>🍅</div>
                                 </div>
                                 <div className="item__details">
@@ -145,30 +157,318 @@ export default function HomePage() {
                                 </div>
                             </div>
 
-                            <div className="item__expanded">
-                                <div className="item__expanded-btn">
-                                    <button type="button">제안하기 (3)</button>
-                                </div>
 
-                                <div className="item__expanded-details">
-                                    <div className="seller-info">
-                                        <div className="seller">못난이감자</div>
-                                        <div className="message">저한테 팔아주세요</div>
+                            {!showDetail && <button type="button" className="item__more-btn" onClick={handleToggleDetail}>
+                                <MdKeyboardDoubleArrowDown className="icon" />
+                            </button>}
+
+
+                            {showDetail &&
+                                <div className="interaction">
+                                    <div className="interaction__btn">
+                                        <button type="button">제안하기 (3)</button>
                                     </div>
-                                    <div className="offer">
-                                        <div className="status">제안요청</div>
-                                        <div className="price">13,000원</div>
+
+                                    <div className="interaction__user-list">
+                                        <div className="list-item">
+                                            <div className="seller-info">
+                                                <div className="seller">못난이감자</div>
+                                                <div className="message">저한테 팔아주세요</div>
+                                            </div>
+                                            <div className="offer">
+                                                <div className="status">제안요청</div>
+                                                <div className="price">13,000원</div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>}
+
+                        </div>
+
+                        <div className="item">
+                            <div className="item__default">
+                                <div className="item__info">
+                                    <div className="title">
+                                        포슬포슬 수미감자입니다!! 감튀로도 제격
+                                    </div>
+
+                                    <div className="test111">
+                                        <div className="rating">
+                                            🤢못난이 등급
+                                        </div>
+                                        <div className="type-block">
+                                            <div className="type">감자</div>
+                                            <div>x 1박스</div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div className="item__image">
+                                    <div>🥔</div>
+                                </div>
+                                <div className="item__details">
+                                    <div className="favorite">
+                                        <MdFavoriteBorder className="icon" />
+                                    </div>
+                                    <div className="sales-status">
+                                        판매중
+                                    </div>
+                                    <div className="time">12:03:32</div>
+                                    <div className="price">💰 12,000원</div>
+                                    <div className="seller">판매자: 김아무개</div>
+                                </div>
+                            </div>
+
+
+                            {!showDetail && <button type="button" className="item__more-btn" onClick={handleToggleDetail}>
+                                <MdKeyboardDoubleArrowDown className="icon" />
+                            </button>}
+
+
+                            {showDetail &&
+                                <div className="interaction">
+                                    <div className="interaction__btn">
+                                        <button type="button">제안하기 (3)</button>
+                                    </div>
+
+                                    <div className="interaction__user-list">
+                                        <div className="list-item">
+                                            <div className="seller-info">
+                                                <div className="seller">총각네야채가게</div>
+                                                <div className="message">저한테 팔아주세요</div>
+                                            </div>
+                                            <div className="offer">
+                                                <div className="status">제안요청</div>
+                                                <div className="price">13,000원</div>
+                                            </div>
+                                        </div>
+
+                                        <div className="list-item">
+                                            <div className="seller-info">
+                                                <div className="seller">못난이감자</div>
+                                                <div className="message">저한테 팔아주세요ㅎㅎㅎㅎㅎ</div>
+                                            </div>
+                                            <div className="offer">
+                                                <div className="status">제안요청</div>
+                                                <div className="price">13,000원</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>}
+
+                        </div>
+
+                        <div className="item">
+                            <div className="item__default">
+                                <div className="item__info">
+                                    <div className="title">
+                                        포슬포슬 수미감자입니다!! 감튀로도 제격
+                                    </div>
+
+                                    <div className="test111">
+                                        <div className="rating">
+                                            🤢못난이 등급
+                                        </div>
+                                        <div className="type-block">
+                                            <div className="type">감자</div>
+                                            <div>x 1박스</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="item__image">
+                                    <div>🥔</div>
+                                </div>
+                                <div className="item__details">
+                                    <div className="favorite">
+                                        <MdFavoriteBorder className="icon" />
+                                    </div>
+                                    <div className="sales-status">
+                                        판매중
+                                    </div>
+                                    <div className="time">12:03:32</div>
+                                    <div className="price">💰 12,000원</div>
+                                    <div className="seller">판매자: 김아무개</div>
+                                </div>
+                            </div>
+
+
+                            {!showDetail && <button type="button" className="item__more-btn" onClick={handleToggleDetail}>
+                                <MdKeyboardDoubleArrowDown className="icon" />
+                            </button>}
+
+
+                            {showDetail &&
+                                <div className="interaction">
+                                    <div className="interaction__btn">
+                                        <button type="button">제안하기 (3)</button>
+                                    </div>
+
+                                    <div className="interaction__user-list">
+                                        <div className="list-item">
+                                            <div className="seller-info">
+                                                <div className="seller">총각네야채가게</div>
+                                                <div className="message">저한테 팔아주세요</div>
+                                            </div>
+                                            <div className="offer">
+                                                <div className="status">제안요청</div>
+                                                <div className="price">13,000원</div>
+                                            </div>
+                                        </div>
+
+                                        <div className="list-item">
+                                            <div className="seller-info">
+                                                <div className="seller">못난이감자</div>
+                                                <div className="message">저한테 팔아주세요ㅎㅎㅎㅎㅎ</div>
+                                            </div>
+                                            <div className="offer">
+                                                <div className="status">제안요청</div>
+                                                <div className="price">13,000원</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>}
+
+                        </div>
+
+                        <div className="item">
+                            <div className="item__default">
+                                <div className="item__info">
+                                    <div className="title">
+                                        포슬포슬 수미감자입니다!! 감튀로도 제격
+                                    </div>
+
+                                    <div className="test111">
+                                        <div className="rating">
+                                            🤢못난이 등급
+                                        </div>
+                                        <div className="type-block">
+                                            <div className="type">감자</div>
+                                            <div>x 1박스</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="item__image">
+                                    <div>🥔</div>
+                                </div>
+                                <div className="item__details">
+                                    <div className="favorite">
+                                        <MdFavoriteBorder className="icon" />
+                                    </div>
+                                    <div className="sales-status">
+                                        판매중
+                                    </div>
+                                    <div className="time">12:03:32</div>
+                                    <div className="price">💰 12,000원</div>
+                                    <div className="seller">판매자: 김아무개</div>
+                                </div>
+                            </div>
+
+
+                            {!showDetail && <button type="button" className="item__more-btn" onClick={handleToggleDetail}>
+                                <MdKeyboardDoubleArrowDown className="icon" />
+                            </button>}
+
+
+                            {showDetail &&
+                                <div className="interaction">
+                                    <div className="interaction__btn">
+                                        <button type="button">제안하기 (3)</button>
+                                    </div>
+
+                                    <div className="interaction__user-list">
+                                        <div className="list-item">
+                                            <div className="seller-info">
+                                                <div className="seller">총각네야채가게</div>
+                                                <div className="message">저한테 팔아주세요</div>
+                                            </div>
+                                            <div className="offer">
+                                                <div className="status">제안요청</div>
+                                                <div className="price">13,000원</div>
+                                            </div>
+                                        </div>
+
+                                        <div className="list-item">
+                                            <div className="seller-info">
+                                                <div className="seller">못난이감자</div>
+                                                <div className="message">저한테 팔아주세요ㅎㅎㅎㅎㅎ</div>
+                                            </div>
+                                            <div className="offer">
+                                                <div className="status">제안요청</div>
+                                                <div className="price">13,000원</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>}
+
+                        </div>
+                    </div>
+
+                    <div className="content__add-item">
+                        <button className="btn">
+                            
+                        </button>
+                    </div>
+                </div>
+
+                {/* <div className="inbox">
+                    <div className="inbox__content">
+                        <div className="inbox__header">
+                            <div className="inbox__checkbox">
+                                <input type="checkbox" className="inbox__checkbox-input" />
+                            </div>
+                            <div className="inbox__mark-read">
+                                <button type="button" className="inbox__mark-read-btn">읽음으로 표시</button>
                             </div>
                         </div>
 
+                        <div className="inbox__list">
+                            <div className="inbox__checkbox">
+                                <input type="checkbox" className="inbox__checkbox-input" />
+                            </div>
 
+                            <div className="inbox__inner">
+                                <div className="inbox__item-info">
+                                    <div className="">🤢 못난이 등급 | 토마토 x 3박스</div>
+                                    <div className="">가격 제안 요청이 도착했습니다.</div>
+                                    <div className="">제안 가격 : 12,000원</div>
+                                </div>
+                                <div className="inbox__sender">판매자명: 오이있어요</div>
+                                <div className="inbox__time">24.07.12 21:15</div>
+                            </div>
+                        </div>
 
+                        <div className="inbox__list">
+                            <div className="inbox__checkbox">
+                                <input type="checkbox" className="inbox__checkbox-input" />
+                            </div>
 
-
+                            <div className="inbox__inner">
+                                <div className="inbox__item-info">
+                                    <div className="">🤢 싱싱이 등급 | 감자 x 3박스</div>
+                                    <div className="">가격 제안 요청이 도착했습니다.</div>
+                                    <div className="">제안 가격 : 1,000원</div>
+                                </div>
+                                <div className="inbox__sender">판매자명: 농사짓는사람</div>
+                                <div className="inbox__time">24.07.12 21:15</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div className="inbox__pagination">
+                        <div className="inbox__page-num">
+                            페이지 1
+                        </div>
+                        <div className="inbox__controls">
+                            <button type="button" className="inbox__btn inbox__btn--prev">
+                                <MdArrowBackIos />
+                            </button>
+
+                            <button type="button" className="inbox__btn inbox__btn--next">
+                                <MdArrowForwardIos />
+                            </button>
+                        </div>
+                    </div>
+                </div> */}
             </div>
 
         </div>
