@@ -1,17 +1,17 @@
-// import HomePage from 'pages/HomePage';
-import LoginForm from 'pages/LoginPage';
+// import Home from 'pages/Home';
+import Login from 'pages/Login';
 import './App.css';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import HomePage from 'pages/HomePage';
-import SignupForm from 'pages/SignupPage';
+import Home from 'pages/Home';
+import Signup from 'pages/Signup';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<HomePage />}/>
-        <Route path="/login" element={<LoginForm />}/>
-        <Route path="/join" element={<SignupForm />}/>
+        <Route path='/' element={<Home />}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/join" element={<Signup />}/>
       </Routes>
     </Router>
 

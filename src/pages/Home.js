@@ -7,7 +7,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { BsPlusCircleFill } from "react-icons/bs";
 
-export default function HomePage() {
+export default function Home() {
 
     const [showDetail, setShowDetail] = useState(false);
 
