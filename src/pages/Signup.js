@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 export default function Signup() {
     const [username, setUsername] = useState("");
@@ -12,7 +12,6 @@ export default function Signup() {
 
     const [nickname, setNickname] = useState("");
     const [nicknameErrorText, setNicknameErrorText] = useState("");
-
 
 
     const onChangeHandler = (e) => {

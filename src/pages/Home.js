@@ -6,17 +6,24 @@ import { IoMdRefresh } from "react-icons/io";
 import { MdFavoriteBorder } from "react-icons/md";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { BsPlusCircleFill } from "react-icons/bs";
+import AddItemModal from "components/AddItemModal";
 
 export default function Home() {
 
     const [showDetail, setShowDetail] = useState(false);
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
     const handleToggleDetail = () => {
         setShowDetail(true);
     }
 
+    const addNewItem = () => {
+        setIsModalVisible(!isModalVisible);
+        console.log(isModalVisible)
+    }
+
     return (
-        <div className="home">
+        <div className="home" style={{position: isModalVisible ? 'fixed' : 'static'}}>
             <div className="home__header">
 
                 <div className="home__header-content">
@@ -405,10 +412,17 @@ export default function Home() {
                     </div>
 
                     <div className="content__add-item">
-                        <button className="btn">
-                            
+                        <button className="btn" onClick={addNewItem}>
+
                         </button>
                     </div>
+
+                    {
+                        isModalVisible ? <AddItemModal/> : null
+                    }
+
+
+
                 </div>
 
                 {/* <div className="inbox">

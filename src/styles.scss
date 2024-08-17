@@ -22,6 +22,10 @@ $lightgrey: #c1c1c1;
   @include flex-layout(column);
 }
 
+body {
+  overflow-y: scroll;
+}
+
 body,
 button {
   font-family: "Noto Sans KR", sans-serif;
@@ -181,7 +185,7 @@ button {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 9998;
     background-color: #fff;
     // box-shadow: 0 4px 14px 2px rgb(67 67 67 / 4%);
   }
@@ -335,7 +339,7 @@ button {
         top: 126px;
         width: calc(100% - 280px);
         max-width: 770px;
-        z-index: 9998;
+        z-index: 9997;
         border-radius: 0 0 10px 10px;
         box-shadow: 0 4px 14px 2px rgb(67 67 67 / 4%);
         background-color: $mainColor;
@@ -580,4 +584,21 @@ button {
       }
     }
   }
+}
+
+.modal-wrap {
+  position: fixed !important;
+
+  z-index: 9998;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin-left: 140px;
+  width: 770px;
+  // width: 100vw;
+  height: 500px;
+  background-color: #c1c1c1;
+  border: 1px solid red;
+  // opacity: 0.5;
+  
 }
