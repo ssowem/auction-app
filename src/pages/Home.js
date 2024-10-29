@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { FaMessage } from "react-icons/fa6";
 import { IoMdRefresh } from "react-icons/io";
 // import { MdArrowBackIos } from "react-icons/md";
@@ -8,13 +8,14 @@ import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { BsPlusCircleFill } from "react-icons/bs";
 import AddItemModal from "components/AddItemModal";
 
-export default function Home() {
+export default function Home(props) {
 
     const [showDetail, setShowDetail] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
+    // const id = useId();
 
     const handleToggleDetail = () => {
-        setShowDetail(true);
+            setShowDetail(true);
     }
 
     const addNewItem = () => {
@@ -23,7 +24,7 @@ export default function Home() {
     }
 
     return (
-        <div className="home" style={{position: isModalVisible ? 'fixed' : 'static'}}>
+        <div className="home" style={{ position: isModalVisible ? 'fixed' : 'static' }}>
             <div className="home__header">
 
                 <div className="home__header-content">
@@ -165,13 +166,13 @@ export default function Home() {
                             </div>
 
 
-                            {!showDetail && <button type="button" className="item__more-btn" onClick={handleToggleDetail}>
+                            {!showDetail && <button type="button" className="item__more-btn" onClick={handleToggleDetail} btnNum="1">
                                 <MdKeyboardDoubleArrowDown className="icon" />
                             </button>}
 
 
                             {showDetail &&
-                                <div className="interaction">
+                                <div className="interaction" detailNum="1">
                                     <div className="interaction__btn">
                                         <button type="button">제안하기 (3)</button>
                                     </div>
@@ -418,7 +419,7 @@ export default function Home() {
                     </div>
 
                     {
-                        isModalVisible ? <AddItemModal/> : null
+                        isModalVisible ? <AddItemModal /> : null
                     }
 
 
